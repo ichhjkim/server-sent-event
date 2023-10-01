@@ -18,7 +18,9 @@ Polling과 같이 클라이언트가 주기적으로 http요청을 보낼 필요
 - 이벤트 데이터는 UTF-8 인코딩된 문자열만 지원됩니다.
 - 클라이언트에서 페이지를 닫아도 서버에서 감지하기가 어렵다는 단점이 있습니다.
 
-## [Client] Javascript EventSource API를 통한 SSE 구현
+## SSE 구현
+
+### [Client] Javascript EventSource API를 통한 SSE 구현
 
 ```javascript
 const eventSource = new EventSource(url);
@@ -51,3 +53,6 @@ eventSource.onerror = (e: any) => {
   }
 };
 ```
+
+### [Server] Spring SseEmitter을 통한 SSE 구현
+spring에서 sse을 어떻게 적용하는지 알아보자. spring framework 4.2부터 SSE 통신을 지원하는 SseEmitter 클래스가 생겼다. 
