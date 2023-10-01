@@ -1,5 +1,7 @@
 # Server-Sent-Events(SSE)
 
+이 레포지토리는 SSE를 `Javascript[Client]`, `Java Spring[Server Side]`를 활용하여 구현하였습니다.
+
 ## Server-Sent-Events란?
 
 서버에서 클라이언트로 단방향으로 데이터를 전달할 수 있는 단방향 통신 채널입니다. 
