@@ -1,16 +1,17 @@
-package com.sse.interfaces.view;
+package com.sse.interfaces;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-@Controller
-public class SseViewController {
+@RestController
+public class NewsPageController {
 
-    @RequestMapping("/sse-view")
-    public ModelAndView getSSeView() {
+    @RequestMapping("news/page")
+    public ModelAndView getNewsPage() {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("sseView");
+        modelAndView.setViewName("news");
         return modelAndView;
     }
 }

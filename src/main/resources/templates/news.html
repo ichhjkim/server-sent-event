@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Real Time News</title>
+</head>
+<body>
+    <button onclick="subscribe()">Breaking News!!</button>
+    <h1>Breaking News List</h1>
+    <div>
+        <ul id="breaking-news-list">
+
+        </ul>
+    </div>
+    <script>
+        function subscribe() {
+            var url = "http://localhost:8080/news/subscribe"
+            var eventSource = new EventSource(url);
+
+            // 앞에서 설정해둔 sseEvent name을 구독한다.(breakingNews)
+            eventSource.addEventListener("breakingNews", (e) => {
+                console.log(e.data)
+                var articleData = JSON.parse(e.data);
+                var articleBlock = document.createElement('li')
+                var articleDetail = document.createTextNode(articleData.detail);
+                articleBlock.append('[' +articleData.title+ ']');
+                articleBlock.append(articleDetail);
+
+                document.getElementById('breaking-news-list').appendChild(articleBlock);
+            })
+        }
+
+    </script>
+</body>
+</html>
