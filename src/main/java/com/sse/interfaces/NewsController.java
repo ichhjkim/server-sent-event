@@ -16,6 +16,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class NewsController {
     public List<SseEmitter> emitters = new CopyOnWriteArrayList<>(); // Thread Safe
     private final Long TIME_OUT = 60L*1000;
+
     // method for client sucscription
     @CrossOrigin
     @GetMapping(value = "/subscribe", consumes = MediaType.ALL_VALUE, produces = MediaType.TEXT_EVENT_STREAM_VALUE)
